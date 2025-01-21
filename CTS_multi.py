@@ -182,6 +182,8 @@ class ConvBlock(nn.Module):
 
         return x+skip
     
+    
+### Base_single & Base_multi###
 class CTS(nn.Module):
 
     def __init__(self, ini_channel, base_channel, convN, im_size, n_trans, num_class,c0):
@@ -250,6 +252,7 @@ class CTS(nn.Module):
         
         return x
     
+### Decoder_multi ###
 class CTS_multi(nn.Module):
 
     def __init__(self, ini_channel, base_channel, convN, im_size, n_trans, num_class,c0,n_task):
@@ -339,7 +342,7 @@ class CTS_multi(nn.Module):
         
         return x_out
     
-
+### proposed network ###
 class CTS_cond(nn.Module):
 
     def __init__(self, ini_channel, base_channel, convN, im_size, n_trans, num_class,c0,n_task=4,learnable=True):
@@ -486,6 +489,8 @@ class DecoderLayer(nn.Module):
         
         return xp
     
+    
+### Decoder_dynamic ###
 class CTS_dynamic(nn.Module):
 
     def __init__(self, ini_channel, base_channel, convN, im_size, n_trans, num_class,c0,n_task=4):
